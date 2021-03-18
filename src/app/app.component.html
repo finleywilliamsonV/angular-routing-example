@@ -4,19 +4,19 @@
             <ul class="nav nav-tabs">
                 <li
                     role="presentation"
-                    class="active"
-                    routerLink="/">
-                    <a>Home</a>
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <a routerLink="/">Home</a>
                 </li>
                 <li
                     role="presentation"
-                    routerLink="/servers">
-                    <a>Servers</a>
+                    routerLinkActive="active">
+                    <a routerLink="/servers">Servers</a>
                 </li>
                 <li
                     role="presentation"
-                    [routerLink]="['/users']">
-                    <a>Users</a>
+                    routerLinkActive="active">
+                    <a [routerLink]="['/users']">Users</a>
                 </li>
             </ul>
         </div>
