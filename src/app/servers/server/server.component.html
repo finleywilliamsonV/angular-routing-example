@@ -5,6 +5,6 @@
     class="btn btn-primary"
     (click)="onEdit()">Edit Server</button>
 
-<a [routerLink]="['/servers', (server.id % 3) + 1]">
+<a (click)="onNextServer()">
     <button class="btn btn-primary">Next Server</button>
 </a>

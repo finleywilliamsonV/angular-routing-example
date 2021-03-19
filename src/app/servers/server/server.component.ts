@@ -33,4 +33,14 @@ export class ServerComponent implements OnInit {
             queryParamsHandling: 'preserve'
         })
     }
+
+    public onNextServer() {
+        const newServerId: number = (this.server.id % 3) + 1
+        this.router.navigate(['/servers', newServerId], {
+            queryParams: {
+                allowEdit: newServerId === 3 ? '1' : '0'
+            },
+            preserveFragment: true
+        })
+    }
 }
