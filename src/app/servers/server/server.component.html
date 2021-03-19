@@ -1,4 +1,10 @@
 <h5>{{ server.name }}</h5>
 <p>Server status is {{ server.status }}</p>
 
-<a [routerLink]="['/servers', (server.id % 3) + 1]">Next Server</a>
+<button
+    class="btn btn-primary"
+    (click)="onEdit()">Edit Server</button>
+
+<a [routerLink]="['/servers', (server.id % 3) + 1]">
+    <button class="btn btn-primary">Next Server</button>
+</a>
