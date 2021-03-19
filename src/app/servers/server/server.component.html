@@ -1,2 +1,4 @@
 <h5>{{ server.name }}</h5>
 <p>Server status is {{ server.status }}</p>
+
+<a [routerLink]="['/servers', (server.id % 3) + 1]">Next Server</a>
