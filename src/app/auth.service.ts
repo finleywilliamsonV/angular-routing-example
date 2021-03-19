@@ -6,16 +6,16 @@ export class AuthService {
             (resolve, reject) => {
                 setTimeout(() => {
                     resolve(this.loggedIn)
-                }, 800)
+                }, 250)
             }
         )
     }
 
-    public login() {
+    public logIn() {
         this.loggedIn = true
     }
 
-    public logout() {
+    public logOut() {
         this.loggedIn = false
     }
 }
