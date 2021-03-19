@@ -14,7 +14,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component'
 import { ServersService } from './servers/servers.service'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-import { AuthGuard } from './auth-guard.service'
+import { AuthGuard } from './auth-guard.service';
+import { LoginStatusComponent } from './login-status/login-status/login-status.component'
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { AuthGuard } from './auth-guard.service'
         UserComponent,
         EditServerComponent,
         ServerComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        LoginStatusComponent
     ],
     imports: [
         BrowserModule,

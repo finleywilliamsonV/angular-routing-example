@@ -1,5 +1,12 @@
+import { EventEmitter } from '@angular/core'
+
 export class AuthService {
     public loggedIn: boolean = false
+    public loggedInStatusChanged: EventEmitter<boolean>
+
+    constructor() {
+        this.loggedInStatusChanged = new EventEmitter<boolean>()
+    }
 
     public isAuthenticated(): Promise<boolean> {
         return new Promise(
@@ -13,9 +20,11 @@ export class AuthService {
 
     public logIn() {
         this.loggedIn = true
+        this.loggedInStatusChanged.emit(true)
     }
 
     public logOut() {
         this.loggedIn = false
+        this.loggedInStatusChanged.emit(false)
     }
 }
