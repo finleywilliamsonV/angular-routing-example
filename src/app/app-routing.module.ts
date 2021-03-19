@@ -7,22 +7,45 @@ import { UsersComponent } from './users/users.component'
 import { HomeComponent } from './home/home.component'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AuthGuard } from './auth-guard.service'
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'users', component: UsersComponent,
+    {
+        path: '', component: HomeComponent
+    },
+    {
+        path: 'users',
+        component: UsersComponent,
         children: [
-            { path: ':id/:name', component: UserComponent }
+            {
+                path: ':id/:name',
+                component: UserComponent
+            }
         ]
     },
-    { path: 'servers', component: ServersComponent,
+    {
+        path: 'servers',
+        canActivateChild: [AuthGuard],
+        component: ServersComponent,
         children: [
-            { path: ':id', component: ServerComponent },
-            { path: ':id/edit', component: EditServerComponent }
+            {
+                path: ':id',
+                component: ServerComponent
+            },
+            {
+                path: ':id/edit',
+                component: EditServerComponent
+            }
         ]
     },
-    { path: 'not-found', component: PageNotFoundComponent },
-    { path: '**', redirectTo: '/not-found' }
+    {
+        path: 'not-found',
+        component: PageNotFoundComponent
+    },
+    {
+        path: '**',
+        redirectTo: '/not-found'
+    }
 ]
 
 @NgModule({
