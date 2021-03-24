@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './servers/edit-server/can-deactiveate-guard.service'
 import { AuthService } from './auth.service'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser'
@@ -37,7 +38,8 @@ import { LoginStatusComponent } from './login-status/login-status/login-status.c
     providers: [
         ServersService,
         AuthGuard,
-        AuthService
+        AuthService,
+        CanDeactivateGuard
     ],
     bootstrap: [AppComponent]
 })

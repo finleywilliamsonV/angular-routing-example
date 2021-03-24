@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core'
 
 export class AuthService {
-    public loggedIn: boolean = false
+    public loggedIn: boolean = true
     public loggedInStatusChanged: EventEmitter<boolean>
 
     constructor() {
