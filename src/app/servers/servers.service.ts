@@ -1,5 +1,7 @@
+import { Server } from './servers.model'
+
 export class ServersService {
-    private servers = [
+    private servers: Server[] = [
         {
             id: 1,
             name: 'Productionserver',
@@ -17,11 +19,11 @@ export class ServersService {
         }
     ];
 
-    getServers() {
+    getServers(): Server[] {
         return this.servers
     }
 
-    getServer(id: number) {
+    getServer(id: number): Server {
         const server = this.servers.find(
             (s) => {
                 return s.id === id
@@ -30,8 +32,8 @@ export class ServersService {
         return server
     }
 
-    updateServer(id: number, serverInfo: { name: string, status: string }) {
-        const server = this.servers.find(
+    updateServer(id: number, serverInfo: { name: string, status: string }): void {
+        const server: Server = this.servers.find(
             (s) => {
                 return s.id === id
             }

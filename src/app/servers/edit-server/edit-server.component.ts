@@ -32,7 +32,6 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
          * this.route.fragment.subscribe()
          */
         const id: number = +this.route.snapshot.params.id
-        console.log('id:', id)
         this.loadServer(id)
         this.serverName = this.server.name
         this.serverStatus = this.server.status

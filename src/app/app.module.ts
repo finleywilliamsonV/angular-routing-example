@@ -1,3 +1,4 @@
+import { ServerResolver } from './servers/server/server-resolver.service'
 import { CanDeactivateGuard } from './servers/edit-server/can-deactiveate-guard.service'
 import { AuthService } from './auth.service'
 import { AppRoutingModule } from './app-routing.module'
@@ -41,7 +42,8 @@ import { ErrorPageComponent } from './error-page/error-page.component'
         ServersService,
         AuthGuard,
         AuthService,
-        CanDeactivateGuard
+        CanDeactivateGuard,
+        ServerResolver
     ],
     bootstrap: [AppComponent]
 })
