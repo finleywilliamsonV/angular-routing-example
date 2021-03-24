@@ -16,7 +16,8 @@ import { ServerComponent } from './servers/server/server.component'
 import { ServersService } from './servers/servers.service'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { AuthGuard } from './auth-guard.service';
-import { LoginStatusComponent } from './login-status/login-status/login-status.component'
+import { LoginStatusComponent } from './login-status/login-status.component';
+import { ErrorPageComponent } from './error-page/error-page.component'
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { LoginStatusComponent } from './login-status/login-status/login-status.c
         EditServerComponent,
         ServerComponent,
         PageNotFoundComponent,
-        LoginStatusComponent
+        LoginStatusComponent,
+        ErrorPageComponent
     ],
     imports: [
         BrowserModule,
