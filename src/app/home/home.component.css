@@ -1,3 +1,7 @@
 div.btn {
     margin-right: 5px;
 }
+
+div[class^="col"] {
+    margin-top: 10px;
+}

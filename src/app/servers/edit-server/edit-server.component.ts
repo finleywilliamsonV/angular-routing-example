@@ -1,3 +1,4 @@
+import { Server, ServerStatus } from './../servers.model'
 import { Observable } from 'rxjs'
 import { ActivatedRoute, Params, Router } from '@angular/router'
 import { Component, OnInit } from '@angular/core'
@@ -11,17 +12,21 @@ import { CanComponentDeactivate } from './can-deactiveate-guard.service'
     styleUrls: ['./edit-server.component.css']
 })
 export class EditServerComponent implements OnInit, CanComponentDeactivate {
-    public server: { id: number, name: string, status: string }
-    public serverName = '';
-    public serverStatus = '';
-    public allowEdit: boolean = false
-    public changesSaved: boolean = false
+    public server: Server
+    public serverName: string
+    public serverStatus: ServerStatus
+
+    public allowEdit: boolean
+    public changesSaved: boolean
 
     constructor(
         private serversService: ServersService,
         private route: ActivatedRoute,
         private router: Router
-    ) {}
+    ) {
+        this.allowEdit = false
+        this.changesSaved = false
+    }
 
     public ngOnInit() {
 

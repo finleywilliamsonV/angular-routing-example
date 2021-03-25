@@ -1,3 +1,4 @@
+import { AddServerComponent } from './servers/add-server/add-server.component'
 import { ServerResolver } from './servers/server/server-resolver.service'
 import { ErrorPageComponent } from './error-page/error-page.component'
 import { CanDeactivateGuard } from './servers/edit-server/can-deactiveate-guard.service'
@@ -44,6 +45,11 @@ const appRoutes: Routes = [
                 canDeactivate: [CanDeactivateGuard]
             }
         ]
+    },
+    {
+        path: 'add-server',
+        component: AddServerComponent,
+        // canDeactivate: [CanDeactivateGuard]
     },
     // {
     //     path: 'not-found',

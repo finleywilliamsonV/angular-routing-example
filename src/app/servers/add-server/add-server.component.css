@@ -1,0 +1,12 @@
+div[class^="col"] {
+    margin-top: 10px;
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-right: 10px;
+}

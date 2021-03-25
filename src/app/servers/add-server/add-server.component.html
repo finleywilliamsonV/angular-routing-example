@@ -1,0 +1,35 @@
+<div class="row">
+
+    <div class="col-xs-12 text-center">
+        <h4>Add a New Server</h4>
+
+        <div class="input-group">
+            <span
+                id="newServerName"
+                class="input-group-addon" 
+                name="name">
+                Name
+            </span>
+            <input
+                type="text"
+                class="form-control"
+                placeholder="New Server"
+                [(ngModel)]=newServer.name>
+        </div>
+
+        <button
+            class="btn btn-success"
+            (click)="onConfirmAddServer()"
+            [disabled]="!formValid"
+            [title]="!formValid && 'Please Add a Name'">
+            Add
+        </button>
+        <button
+            class="btn btn-danger"
+            (click)="onCancel()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
