@@ -1,3 +1,5 @@
+import { ValidServerGuard } from './valid-server-guard.service'
+import { InvalidPageComponent } from './invalid-page/invalid-page.component'
 import { AddServerComponent } from './servers/add-server/add-server.component'
 import { ServerResolver } from './servers/server/server-resolver.service'
 import { ErrorPageComponent } from './error-page/error-page.component'
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
             {
                 path: ':id',
                 component: ServerComponent,
+                canActivate: [ValidServerGuard],
                 resolve: {
                     server: ServerResolver
                 }
@@ -42,6 +45,7 @@ const appRoutes: Routes = [
             {
                 path: ':id/edit',
                 component: EditServerComponent,
+                canActivate: [ValidServerGuard],
                 canDeactivate: [CanDeactivateGuard]
             }
         ]
@@ -61,6 +65,10 @@ const appRoutes: Routes = [
         data: {
             message: 'Page not found!'
         }
+    },
+    {
+        path: 'invalid',
+        component: InvalidPageComponent
     },
     {
         path: '**',

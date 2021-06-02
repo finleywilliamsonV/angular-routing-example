@@ -30,6 +30,8 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
 
     public ngOnInit() {
 
+        console.log('this.route:', this.route.snapshot.params)
+
         /**
          * this.route.snapshot.queryParams
          * this.route.snapshot.queryParams

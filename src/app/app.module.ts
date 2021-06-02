@@ -1,3 +1,4 @@
+import { ValidServerGuard } from './valid-server-guard.service'
 import { ServerResolver } from './servers/server/server-resolver.service'
 import { CanDeactivateGuard } from './servers/edit-server/can-deactiveate-guard.service'
 import { AuthService } from './auth.service'
@@ -19,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './auth-guard.service';
 import { LoginStatusComponent } from './login-status/login-status.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { AddServerComponent } from './servers/add-server/add-server.component'
+import { AddServerComponent } from './servers/add-server/add-server.component';
+import { InvalidPageComponent } from './invalid-page/invalid-page.component'
 
 @NgModule({
     declarations: [
@@ -33,7 +35,8 @@ import { AddServerComponent } from './servers/add-server/add-server.component'
         PageNotFoundComponent,
         LoginStatusComponent,
         ErrorPageComponent,
-        AddServerComponent
+        AddServerComponent,
+        InvalidPageComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +48,8 @@ import { AddServerComponent } from './servers/add-server/add-server.component'
         AuthGuard,
         AuthService,
         CanDeactivateGuard,
-        ServerResolver
+        ServerResolver,
+        ValidServerGuard
     ],
     bootstrap: [AppComponent]
 })

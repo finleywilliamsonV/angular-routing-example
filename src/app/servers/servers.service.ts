@@ -62,7 +62,6 @@ export class ServersService {
     public addServer(newServer: Server): void {
         newServer.id = this.getHighestID() + 1
         this.servers.push(newServer)
-        console.log('server added, this.servers:', this.servers)
         this.onAddServer.emit(this.servers)
     }
 
